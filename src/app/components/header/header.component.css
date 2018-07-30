@@ -1,0 +1,96 @@
+#triangle-topleft { 
+    width: 0; 
+   height: 0; 
+   border-top: 40px solid  #202020; 
+   border-right: 150px solid transparent; 
+}
+ #triangle-topright { 
+   width: 0;
+   height: 0;
+   border-top: 40px solid #202020;
+   border-left: 150px solid transparent;
+}
+#square-left{
+   height:40px;
+   background-color:#202020;
+}
+
+#square-right{
+   height:40px;
+   background-color:#202020;
+   display:flex;
+   flex-direction:row;
+   padding-right:20px;
+}
+
+#total-line{
+   position:absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:15px;
+   background-color:#202020;
+}
+
+.show-row{
+   display:flex;
+   flex-direction:row;
+}
+
+#menu-container{
+   width:100%;
+   position:absolute;
+   top:0px;
+   left:0;
+   z-index:999;
+}
+#float-left{
+   position:absolute;
+   top:0;
+   left:0;
+}
+
+#float-right{
+   position:absolute;
+   top:0;
+   right:0;
+}
+.logo{
+    width:50px;
+    height:40px;
+    position:relative;
+    left:0;
+}
+.menu-elements .tooltip-text {
+    background-color: #202020;
+    color: #fff;
+    text-align: center;
+    padding:5px;
+    z-index: 999;
+}
+.tooltip-div{ 
+    visibility: hidden;
+    position: relative ;
+    left:2px;
+    top:0;
+    display:flex;
+    flex-direction:column;
+}
+.menu-elements:hover .tooltip-div {
+    visibility: visible;
+}
+.menu-elements{
+    background:transparent;
+    border: 0 transparent;
+}
+.menu-elements:hover {
+    background: #333;
+}
+.triangle-up {
+    width: 0; 
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent; 
+    border-bottom: 3px solid #202020;
+    margin-left:30px;
+}

@@ -1,0 +1,20 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div id="mapWrap">
+    <ng-snotify class="material"></ng-snotify>
+<div class="map"
+  leaflet
+  (leafletMapReady)="onMapReady($event)"
+  [leafletOptions]="options"
+  [leafletFitBounds]="fitBounds"
+  [leafletLayers]="layers"
+  [leafletMarkerCluster]="markerClusterData"
+  [leafletMarkerClusterOptions]="markerClusterOptions"
+  (leafletMarkerClusterReady)="markerClusterReady($event)">
+
+</div>
+<div id="map-controls">
+    
+  <app-right-menu></app-right-menu>
+</div>
+</div>

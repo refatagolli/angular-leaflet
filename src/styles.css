@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* .tooltip {
+  position: relative;
+  display: inline-block;
+} */
+
+.btn .tooltiptext {
+  visibility: hidden;
+  width: 80px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 15px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 7px;
+  right: 115%;
+}
+
+.btn:hover .tooltiptext {
+  visibility: visible;
+}
+.btn .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* This will position the arrow on the right of the tooltip */
+  margin-top: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent black; /* This will make the left border black*/
+ }
+

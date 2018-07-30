@@ -1,0 +1,43 @@
+<div class="btn-group-vertical btn-group-md">
+   <button id="overlayer" type="button" class="btn btn-default" style="margin-bottom: 15px;">
+       <div class="tooltiptext" style="background-color: rgba(37,37,37,0.9) ;color: white; min-width: 200px; min-height: auto;
+       text-align:justify;">
+            <div class="radio radio-primary">
+                    <input type="radio" name="radio1" id="radio1" value="option1">
+                    <label for="radio1">
+                        Google Maps
+                    </label>
+                </div>
+                <div class="radio radio-primary">
+                    <input type="radio" name="radio1" id="radio2" value="option2">
+                    <label for="radio2">
+                        Open Street Maps
+                    </label>
+                </div>
+       </div>
+       <i class="fa fa-map"></i>
+  </button>  
+  <button id="assets" type="button" class="btn btn-default" style="margin-bottom: 15px;">
+        <i class="fa fa-arrows-alt"></i>
+  </button>
+  <button id="assets" type="button" class="btn btn-default" [ngClass]="classes[0]" (click)="comand(0)">
+     <span class="tooltiptext">Assets</span>
+     <i class="fa fa-warning"></i>
+  </button>
+  <button id="events" type="button" class="btn btn-default" [ngClass]="classes[1]" (click)="comand(1)">
+      <span class="tooltiptext">Events</span>
+      <i class="fa fa-asterisk"></i>
+  </button>
+  <button id="vehicles" type="button" class="btn btn-default" [ngClass]="classes[2]" (click)="comand(2)">
+      <span class="tooltiptext">Vehicles</span>
+      <i class="fa fa-car"></i>
+  </button>
+  <button id="traffic" type="button" class="btn btn-default" [ngClass]="classes[3]" (click)="comand(3)"> 
+     <span class="tooltiptext">Traffic</span>
+     <i class="fa fa-road"></i>
+  </button>
+  <button id="settings" type="button" class="btn btn-default">
+    <span class="tooltiptext">Settings</span>
+     <i class="fa fa-bars"></i>
+   </button>
+</div>

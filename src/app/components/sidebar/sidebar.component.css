@@ -1,0 +1,121 @@
+.container-menu{
+    position: relative;
+    width:300px;
+    height:700px;
+    background-color:#202020;;
+    color:white;
+    opacity:0.95;
+}
+.container-menu li {
+    width:33.3333%;
+    font-size:18px;
+    border :none;
+    color:#333;
+} 
+.container-menu li a {
+    color:#555;
+} 
+.nav-tabs > li > a:hover{
+    background-color: #202020;
+    color:white;
+    border-style: solid;
+    border-bottom-color: white;
+    border-right-color: #202020;
+    border-left: #202020;
+    border-top-color: #202020;
+}
+.nav-tabs > li.active > a{
+    outline:none;
+    color:white;
+    background-color: #202020;
+    border-style: solid;
+    border-bottom-color: white;
+    border-right-color: #202020;
+    border-left: #202020;
+    border-top-color: #202020;
+}
+.nav-tabs{
+    border-color: #202020;
+}
+#search-button , #search-criteria{
+    height:22px;
+    border-radius:0;
+    margin-top:10px;
+
+}
+#search-criteria{
+   background-color: #555;
+   color:white;
+   outline: none;
+   border: none !important;
+   -webkit-box-shadow: none !important;
+   -moz-box-shadow: none !important;
+   box-shadow: none !important;
+}
+/* #search-criteria:active{
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+ } */
+#search-button{
+    background-color:transparent;
+    font-size:20px;
+    color:#666;
+    box-shadow:0;
+    border:0;
+    text-align: center;
+    border-top:0;
+    margin-top:-10px;
+}
+#search-button  i{
+    text-shadow:0;
+}
+.search-container{
+    text-align: left;
+    margin-left:10px;
+}
+
+
+#sidebar-visibility-div{
+    position: relative;
+    top:200px;
+    width: 15px; 
+    height: 100px;
+    display:flex;
+    flex-direction:column;
+  }
+  #sidebar-visibility-div  #top-triangle{
+    width: 0; 
+    height: 0;
+    border-bottom: 30px solid #202020; 
+    border-right: 15px solid transparent;
+  }
+  #sidebar-visibility-div  #bottom-triangle{
+    width: 0; 
+    height: 0; 
+    border-top: 30px solid #202020; 
+    border-right: 15px solid transparent;
+  }
+  #sidebar-visibility-div  #middle-square{
+    width:15px;
+    height:40px;
+    background-color: #202020;
+    color:white;
+    border:0;
+    margin:0;
+    padding:0;
+  }
+  #all-menu{
+    display:flex;
+    flex-direction:row;
+    position:absolute;
+    left:0;
+    bottom:0;
+    z-index:999;
+    width:300px;
+    color:white;
+    height:700px;
+    opacity:0.8;
+  }
