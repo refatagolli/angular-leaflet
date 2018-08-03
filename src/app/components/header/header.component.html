@@ -1,4 +1,4 @@
-<div id="menu-container" class="show-row">
+<div id="menu-container" class="show-row" style="background-image: url('../../../assets/markers/header-background.svg')">
   <div id ="total-line" ></div>
   <div id ="float-left" class="show-row">
     <div id ="square-left">
@@ -15,30 +15,33 @@
           <button class="menu-elements"><img src = "../../../assets/markers /settings.svg" class = "logo"></button>
         <div class="tooltip-div" >
           <span  class = "triangle-up"></span>
-          <span class= "tooltip-text">test2</span>
+          <span class= "tooltip-text">settings</span>
         </div>
       </div>
       <div class="menu-elements">
           <button class="menu-elements"><img src = "../../../assets/markers /gear.svg" class="logo"></button>
           <div class="tooltip-div" >
             <span  class = "triangle-up"></span>
-            <span class= "tooltip-text">test1</span>
+            <span class= "tooltip-text">pre-sets</span>
           </div>
         </div>
         <div class="menu-elements">
             <button class="menu-elements"><img src = "../../../assets/markers /user.svg" class = "logo"></button>
             <div class="tooltip-div" >
               <span  class = "triangle-up"></span>
-              <span class= "tooltip-text">test3</span>
+              <span class= "tooltip-text">{{ name }}</span>
             </div>
           </div>
           <div class="menu-elements">
             <button class="menu-elements"><img src = "../../../assets/markers /language.svg" class = "logo"></button>
               <div class="tooltip-div" >
                 <span  class = "triangle-up"></span>
-                <span class= "tooltip-text">test4</span>
+                <span class= "tooltip-text">language</span>
               </div>
             </div>
+            <div class="menu-elements">
+                <p style="color:white;font-size:18px;">{{ name }}</p>
+              </div>
     </div>
   </div>
 </div>

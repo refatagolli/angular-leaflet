@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KeycloakService } from "../../keycloak/keycloak.service";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private  path : String = "../../../assets/markers/header-background.svg"; 
+  name:String;
+
+  constructor(private keycloakService:KeycloakService) {
+    this.name=this.keycloakService.getUser().username;
+   }
 
   ngOnInit() {
   }

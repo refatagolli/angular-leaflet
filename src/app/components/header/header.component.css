@@ -7,8 +7,8 @@
  #triangle-topright { 
    width: 0;
    height: 0;
-   border-top: 40px solid #202020;
-   border-left: 150px solid transparent;
+   border-top: 40px solid #202020; 
+    border-left: 150px solid transparent;
 }
 #square-left{
    height:40px;

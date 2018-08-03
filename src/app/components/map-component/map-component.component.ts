@@ -114,7 +114,7 @@ this.service.getAssets().subscribe(assets => {
       if(geoinffo.geoinfo.geometry.type=="LineString"){
         let linecoord=geoinffo.geoinfo.geometry.coordinates;
       
-        this.markerClusterGroup.addLayer(L.polyline(linecoord,{
+        this.layergroup.addLayer(L.polyline(linecoord,{
             color: 'green'
           }).bindPopup('<h3>PolyLine</h3>'))
       }

@@ -110,6 +110,8 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ng_snotify__ = __webpack_require__("../../../../ng-snotify/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__app_keycloak_keycloak_http__ = __webpack_require__("../../../../../src/app/keycloak/keycloak.http.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__app_keycloak_keycloak_service__ = __webpack_require__("../../../../../src/app/keycloak/keycloak.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -131,6 +133,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 ;
+
+
 
 
 
@@ -167,13 +171,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__leaflet_markercluster_leaflet_markercluster_module__["a" /* LeafletMarkerClusterModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_17__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_18__angular_http__["b" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_18__angular_http__["d" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_19_ng_snotify__["a" /* SnotifyModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_8__services_websocket_service__["a" /* WebsocketService */],
                 __WEBPACK_IMPORTED_MODULE_14__services_displayassets_service__["a" /* DisplayassetsService */],
                 { provide: 'SnotifyToastConfig', useValue: __WEBPACK_IMPORTED_MODULE_19_ng_snotify__["c" /* ToastDefaults */] },
-                __WEBPACK_IMPORTED_MODULE_19_ng_snotify__["b" /* SnotifyService */]
+                __WEBPACK_IMPORTED_MODULE_19_ng_snotify__["b" /* SnotifyService */],
+                __WEBPACK_IMPORTED_MODULE_20__app_keycloak_keycloak_http__["a" /* KEYCLOAK_HTTP_PROVIDER */],
+                __WEBPACK_IMPORTED_MODULE_21__app_keycloak_keycloak_service__["a" /* KeycloakService */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
@@ -315,7 +321,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#triangle-topleft { \n    width: 0; \n   height: 0; \n   border-top: 40px solid  #202020; \n   border-right: 150px solid transparent; \n}\n #triangle-topright { \n   width: 0;\n   height: 0;\n   border-top: 40px solid #202020;\n   border-left: 150px solid transparent;\n}\n #square-left{\n   height:40px;\n   background-color:#202020;\n}\n #square-right{\n   height:40px;\n   background-color:#202020;\n   display:-webkit-box;\n   display:-ms-flexbox;\n   display:flex;\n   -webkit-box-orient:horizontal;\n   -webkit-box-direction:normal;\n       -ms-flex-direction:row;\n           flex-direction:row;\n   padding-right:20px;\n}\n #total-line{\n   position:absolute;\n   top:0;\n   left:0;\n   width:100%;\n   height:15px;\n   background-color:#202020;\n}\n .show-row{\n   display:-webkit-box;\n   display:-ms-flexbox;\n   display:flex;\n   -webkit-box-orient:horizontal;\n   -webkit-box-direction:normal;\n       -ms-flex-direction:row;\n           flex-direction:row;\n}\n #menu-container{\n   width:100%;\n   position:absolute;\n   top:0px;\n   left:0;\n   z-index:999;\n}\n #float-left{\n   position:absolute;\n   top:0;\n   left:0;\n}\n #float-right{\n   position:absolute;\n   top:0;\n   right:0;\n}\n .logo{\n    width:50px;\n    height:40px;\n    position:relative;\n    left:0;\n}\n .menu-elements .tooltip-text {\n    background-color: #202020;\n    color: #fff;\n    text-align: center;\n    padding:5px;\n    z-index: 999;\n}\n .tooltip-div{ \n    visibility: hidden;\n    position: relative ;\n    left:2px;\n    top:0;\n    display:-webkit-box;\n    display:-ms-flexbox;\n    display:flex;\n    -webkit-box-orient:vertical;\n    -webkit-box-direction:normal;\n        -ms-flex-direction:column;\n            flex-direction:column;\n}\n .menu-elements:hover .tooltip-div {\n    visibility: visible;\n}\n .menu-elements{\n    background:transparent;\n    border: 0 transparent;\n}\n .menu-elements:hover {\n    background: #333;\n}\n .triangle-up {\n    width: 0; \n    height: 0;\n    border-left: 5px solid transparent;\n    border-right: 5px solid transparent; \n    border-bottom: 3px solid #202020;\n    margin-left:30px;\n}", ""]);
+exports.push([module.i, "#triangle-topleft { \n    width: 0; \n   height: 0; \n   border-top: 40px solid  #202020; \n   border-right: 150px solid transparent; \n}\n #triangle-topright { \n   width: 0;\n   height: 0;\n   border-top: 40px solid #202020; \n    border-left: 150px solid transparent;\n}\n #square-left{\n   height:40px;\n   background-color:#202020;\n}\n #square-right{\n   height:40px;\n   background-color:#202020;\n   display:-webkit-box;\n   display:-ms-flexbox;\n   display:flex;\n   -webkit-box-orient:horizontal;\n   -webkit-box-direction:normal;\n       -ms-flex-direction:row;\n           flex-direction:row;\n   padding-right:20px;\n}\n #total-line{\n   position:absolute;\n   top:0;\n   left:0;\n   width:100%;\n   height:15px;\n   background-color:#202020;\n}\n .show-row{\n   display:-webkit-box;\n   display:-ms-flexbox;\n   display:flex;\n   -webkit-box-orient:horizontal;\n   -webkit-box-direction:normal;\n       -ms-flex-direction:row;\n           flex-direction:row;\n}\n #menu-container{\n   width:100%;\n   position:absolute;\n   top:0px;\n   left:0;\n   z-index:999;\n}\n #float-left{\n   position:absolute;\n   top:0;\n   left:0;\n}\n #float-right{\n   position:absolute;\n   top:0;\n   right:0;\n}\n .logo{\n    width:50px;\n    height:40px;\n    position:relative;\n    left:0;\n}\n .menu-elements .tooltip-text {\n    background-color: #202020;\n    color: #fff;\n    text-align: center;\n    padding:5px;\n    z-index: 999;\n}\n .tooltip-div{ \n    visibility: hidden;\n    position: relative ;\n    left:2px;\n    top:0;\n    display:-webkit-box;\n    display:-ms-flexbox;\n    display:flex;\n    -webkit-box-orient:vertical;\n    -webkit-box-direction:normal;\n        -ms-flex-direction:column;\n            flex-direction:column;\n}\n .menu-elements:hover .tooltip-div {\n    visibility: visible;\n}\n .menu-elements{\n    background:transparent;\n    border: 0 transparent;\n}\n .menu-elements:hover {\n    background: #333;\n}\n .triangle-up {\n    width: 0; \n    height: 0;\n    border-left: 5px solid transparent;\n    border-right: 5px solid transparent; \n    border-bottom: 3px solid #202020;\n    margin-left:30px;\n}", ""]);
 
 // exports
 
@@ -328,7 +334,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"menu-container\" class=\"show-row\">\n  <div id =\"total-line\" ></div>\n  <div id =\"float-left\" class=\"show-row\">\n    <div id =\"square-left\">\n        <a href = \"#\">\n          <img src = \"../../../assets/markers /logo.svg\" class = \"logo\">\n        </a>\n    </div>\n    <div id = \"triangle-topleft\"></div>\n  </div>\n  <div id =\"float-right\" class=\"show-row\">\n    <div id = \"triangle-topright\"></div>\n    <div id =\"square-right\">\n      <div class=\"menu-elements\">\n          <button class=\"menu-elements\"><img src = \"../../../assets/markers /settings.svg\" class = \"logo\"></button>\n        <div class=\"tooltip-div\" >\n          <span  class = \"triangle-up\"></span>\n          <span class= \"tooltip-text\">test2</span>\n        </div>\n      </div>\n      <div class=\"menu-elements\">\n          <button class=\"menu-elements\"><img src = \"../../../assets/markers /gear.svg\" class=\"logo\"></button>\n          <div class=\"tooltip-div\" >\n            <span  class = \"triangle-up\"></span>\n            <span class= \"tooltip-text\">test1</span>\n          </div>\n        </div>\n        <div class=\"menu-elements\">\n            <button class=\"menu-elements\"><img src = \"../../../assets/markers /user.svg\" class = \"logo\"></button>\n            <div class=\"tooltip-div\" >\n              <span  class = \"triangle-up\"></span>\n              <span class= \"tooltip-text\">test3</span>\n            </div>\n          </div>\n          <div class=\"menu-elements\">\n            <button class=\"menu-elements\"><img src = \"../../../assets/markers /language.svg\" class = \"logo\"></button>\n              <div class=\"tooltip-div\" >\n                <span  class = \"triangle-up\"></span>\n                <span class= \"tooltip-text\">test4</span>\n              </div>\n            </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<div id=\"menu-container\" class=\"show-row\" style=\"background-image: url('../../../assets/markers/header-background.svg')\">\n  <div id =\"total-line\" ></div>\n  <div id =\"float-left\" class=\"show-row\">\n    <div id =\"square-left\">\n        <a href = \"#\">\n          <img src = \"../../../assets/markers /logo.svg\" class = \"logo\">\n        </a>\n    </div>\n    <div id = \"triangle-topleft\"></div>\n  </div>\n  <div id =\"float-right\" class=\"show-row\">\n    <div id = \"triangle-topright\"></div>\n    <div id =\"square-right\">\n      <div class=\"menu-elements\">\n          <button class=\"menu-elements\"><img src = \"../../../assets/markers /settings.svg\" class = \"logo\"></button>\n        <div class=\"tooltip-div\" >\n          <span  class = \"triangle-up\"></span>\n          <span class= \"tooltip-text\">settings</span>\n        </div>\n      </div>\n      <div class=\"menu-elements\">\n          <button class=\"menu-elements\"><img src = \"../../../assets/markers /gear.svg\" class=\"logo\"></button>\n          <div class=\"tooltip-div\" >\n            <span  class = \"triangle-up\"></span>\n            <span class= \"tooltip-text\">pre-sets</span>\n          </div>\n        </div>\n        <div class=\"menu-elements\">\n            <button class=\"menu-elements\"><img src = \"../../../assets/markers /user.svg\" class = \"logo\"></button>\n            <div class=\"tooltip-div\" >\n              <span  class = \"triangle-up\"></span>\n              <span class= \"tooltip-text\">{{ name }}</span>\n            </div>\n          </div>\n          <div class=\"menu-elements\">\n            <button class=\"menu-elements\"><img src = \"../../../assets/markers /language.svg\" class = \"logo\"></button>\n              <div class=\"tooltip-div\" >\n                <span  class = \"triangle-up\"></span>\n                <span class= \"tooltip-text\">language</span>\n              </div>\n            </div>\n            <div class=\"menu-elements\">\n                <p style=\"color:white;font-size:18px;\">{{ name }}</p>\n              </div>\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -338,6 +344,7 @@ module.exports = "<div id=\"menu-container\" class=\"show-row\">\n  <div id =\"t
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__keycloak_keycloak_service__ = __webpack_require__("../../../../../src/app/keycloak/keycloak.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -348,8 +355,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent() {
+    function HeaderComponent(keycloakService) {
+        this.keycloakService = keycloakService;
+        this.path = "../../../assets/markers/header-background.svg";
+        this.name = this.keycloakService.getUser().username;
     }
     HeaderComponent.prototype.ngOnInit = function () {
     };
@@ -359,7 +370,7 @@ var HeaderComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/components/header/header.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/header/header.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__keycloak_keycloak_service__["a" /* KeycloakService */]])
     ], HeaderComponent);
     return HeaderComponent;
 }());
@@ -574,7 +585,7 @@ var MapComponentComponent = /** @class */ (function () {
                 }
                 if (geoinffo.geoinfo.geometry.type == "LineString") {
                     var linecoord = geoinffo.geoinfo.geometry.coordinates;
-                    _this.markerClusterGroup.addLayer(__WEBPACK_IMPORTED_MODULE_1_leaflet__["polyline"](linecoord, {
+                    _this.layergroup.addLayer(__WEBPACK_IMPORTED_MODULE_1_leaflet__["polyline"](linecoord, {
                         color: 'green'
                     }).bindPopup('<h3>PolyLine</h3>'));
                 }
@@ -777,7 +788,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sidebar/sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id = \"all-menu\">\n\n  <div class=\"container-menu hidden\">\n    <ul class=\"nav nav-tabs\">\n      <li class=\"active\"><a data-toggle=\"tab\" href=\"#home\">Assets</a></li>\n      <li><a data-toggle=\"tab\" href=\"#menu1\">Events</a></li>\n      <li><a data-toggle=\"tab\" href=\"#menu2\">Vehicles</a></li>\n    </ul>\n\n    <div class=\"search-container\">\n      <form class=\"form-inline\">\n        <input class=\"form-control\" type = \"text\" id = \"search-criteria\" />\n        <a  class= \"btn btn-link\" id = \"search-button\"><i class=\"fa fa-search\"></i></a>\n      </form>\n    </div>\n\n    <div class=\"tab-content\">\n      <div id=\"home\" class=\"tab-pane fade in active\">\n        <h3>HOME</h3>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      </div>\n      <div id=\"menu1\" class=\"tab-pane fade\">\n        <h3>Menu 1</h3>\n        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n      </div>\n      <div id=\"menu2\" class=\"tab-pane fade\">\n        <h3>Menu 2</h3>\n        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>\n      </div>\n\n      <!-- other things to be added here -->\n\n    </div>\n  </div>\n  <div id=\"sidebar-visibility-div\">\n    <div id=\"top-triangle\"></div>\n    <button id=\"middle-square\" (click)=\"toggleButton()\">\n      <i class=\"fa fa-chevron-left\"></i>\n    </button>\n    <div id=\"bottom-triangle\"></div>\n  </div>\n\n</div>\n\n<script>\n  $(document).ready(function(){\n    $(\"#middle-square\").on(\"click\",function(e){\n      $(\"#container-menu\").hide(1000);\n      console.log(\"hahahahhahhaha\");\n    })  \n  \n  })\n</script>"
+module.exports = "<div id = \"all-menu\" >\n\n  <div class=\"container-menu hidden\">\n    <ul class=\"nav nav-tabs\">\n      <li class=\"active\"><a data-toggle=\"tab\" href=\"#home\">Assets</a></li>\n      <li><a data-toggle=\"tab\" href=\"#menu1\">Events</a></li>\n      <li><a data-toggle=\"tab\" href=\"#menu2\">Vehicles</a></li>\n    </ul>\n\n    <div class=\"search-container\">\n      <form class=\"form-inline\">\n        <input class=\"form-control\" type = \"text\" id = \"search-criteria\" />\n        <a  class= \"btn btn-link\" id = \"search-button\"><i class=\"fa fa-search\"></i></a>\n      </form>\n    </div>\n\n    <div class=\"tab-content\">\n      <div id=\"home\" class=\"tab-pane fade in active\">\n        <h3>HOME</h3>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      </div>\n      <div id=\"menu1\" class=\"tab-pane fade\">\n        <h3>Menu 1</h3>\n        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n      </div>\n      <div id=\"menu2\" class=\"tab-pane fade\">\n        <h3>Menu 2</h3>\n        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>\n      </div>\n\n      <!-- other things to be added here -->\n\n    </div>\n  </div>\n  <div id=\"sidebar-visibility-div\">\n    <div id=\"top-triangle\"></div>\n    <button id=\"middle-square\" (click)=\"toggleButton()\">\n      <i class=\"fa fa-chevron-right\"></i>\n    </button>\n    <div id=\"bottom-triangle\"></div>\n  </div>\n\n</div>\n\n<script>\n  $(document).ready(function(){\n    $(\"#middle-square\").on(\"click\",function(e){\n      $(\"#container-menu\").hide(1000);\n      console.log(\"hahahahhahhaha\");\n    })  \n  \n  })\n</script>"
 
 /***/ }),
 
@@ -831,6 +842,215 @@ var SidebarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/keycloak/keycloak.http.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export KeycloakHttp */
+/* unused harmony export keycloakHttpFactory */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KEYCLOAK_HTTP_PROVIDER; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__keycloak_service__ = __webpack_require__("../../../../../src/app/keycloak/keycloak.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+ /**
+* This provides a wrapper over the ng2 Http class that insures tokens are refreshed on each request.
+*/
+var KeycloakHttp = /** @class */ (function (_super) {
+    __extends(KeycloakHttp, _super);
+    function KeycloakHttp(_backend, _defaultOptions, _keycloakService) {
+        var _this = _super.call(this, _backend, _defaultOptions) || this;
+        _this._keycloakService = _keycloakService;
+        return _this;
+    }
+    KeycloakHttp.prototype.request = function (url, options) {
+        var _this = this;
+        var tokenPromise = this._keycloakService.getToken();
+        var tokenObservable = __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__["a" /* Observable */].fromPromise(tokenPromise);
+        if (typeof url === 'string') {
+            return tokenObservable
+                .map(function (token) {
+                var authOptions = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]({
+                    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({
+                        Authorization: 'Bearer ' + token
+                    })
+                });
+                return new __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */]().merge(options).merge(authOptions);
+            })
+                .concatMap(function (opts) { return _super.prototype.request.call(_this, url, opts); });
+        }
+        else if (url instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Request */]) {
+            return tokenObservable
+                .map(function (token) {
+                url.headers.set('Authorization', 'Bearer ' + token);
+                return url;
+            })
+                .concatMap(function (request) { return _super.prototype.request.call(_this, request); });
+        }
+    };
+    KeycloakHttp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* ConnectionBackend */], __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */], __WEBPACK_IMPORTED_MODULE_2__keycloak_service__["a" /* KeycloakService */]])
+    ], KeycloakHttp);
+    return KeycloakHttp;
+}(__WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]));
+
+function keycloakHttpFactory(backend, defaultOptions, keycloakService) {
+    return new KeycloakHttp(backend, defaultOptions, keycloakService);
+}
+var KEYCLOAK_HTTP_PROVIDER = {
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */],
+    useFactory: keycloakHttpFactory,
+    deps: [__WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* XHRBackend */], __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* RequestOptions */], __WEBPACK_IMPORTED_MODULE_2__keycloak_service__["a" /* KeycloakService */]]
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/keycloak/keycloak.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KeycloakService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_user_model__ = __webpack_require__("../../../../../src/app/model/user.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var KeycloakService = /** @class */ (function () {
+    function KeycloakService() {
+    }
+    KeycloakService_1 = KeycloakService;
+    KeycloakService.init = function () {
+        var _this = this;
+        var keycloakAuth = Keycloak({
+            url: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].KEYCLOAK_URL,
+            realm: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].KEYCLOAK_REALM,
+            clientId: __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].KEYCLOAK_CLIENTID
+        });
+        KeycloakService_1.auth.loggedIn = false;
+        return new Promise(function (resolve, reject) {
+            keycloakAuth
+                .init({ onLoad: 'login-required' })
+                .success(function () {
+                KeycloakService_1.auth.loggedIn = true;
+                KeycloakService_1.auth.authz = keycloakAuth;
+                KeycloakService_1.auth.logoutUrl =
+                    keycloakAuth.authServerUrl +
+                        '/realms/' +
+                        __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].KEYCLOAK_REALM +
+                        '/protocol/openid-connect/logout?redirect_uri=' +
+                        document.baseURI;
+                KeycloakService_1.auth.authz.loadUserProfile().success(function (data) {
+                    _this.user = new __WEBPACK_IMPORTED_MODULE_1__model_user_model__["a" /* User */]();
+                    _this.user.username = data.username;
+                    _this.user.firstName = data.firstName;
+                    _this.user.lastName = data.lastName;
+                    _this.user.email = data.email;
+                    resolve();
+                });
+            })
+                .error(function () {
+                reject();
+            });
+        });
+    };
+    KeycloakService.prototype.hasAnyRole = function (roles) {
+        for (var i = 0; i < roles.length; i++) {
+            if (this.hasRole(roles[i])) {
+                return true;
+            }
+        }
+        return false;
+    };
+    KeycloakService.prototype.hasRole = function (role) {
+        return KeycloakService_1.auth.authz.hasRealmRole(role);
+    };
+    KeycloakService.prototype.hasManageUsersRole = function () {
+        return KeycloakService_1.auth.authz.hasResourceRole('manage-users', 'realm-management');
+    };
+    KeycloakService.prototype.logout = function () {
+        console.log('*** LOGOUT');
+        KeycloakService_1.auth.loggedIn = false;
+        KeycloakService_1.auth.authz = null;
+        window.location.href = KeycloakService_1.auth.logoutUrl;
+    };
+    KeycloakService.prototype.getToken = function () {
+        return new Promise(function (resolve, reject) {
+            if (KeycloakService_1.auth.authz.token) {
+                KeycloakService_1.auth.authz
+                    .updateToken(90) // refresh token if it will expire in 90 seconds or less
+                    .success(function () {
+                    resolve(KeycloakService_1.auth.authz.token);
+                })
+                    .error(function () {
+                    reject('Failed to refresh token');
+                });
+            }
+            else {
+                reject('Not logged in');
+            }
+        });
+    };
+    KeycloakService.prototype.getUser = function () {
+        return KeycloakService_1.user;
+    };
+    KeycloakService.auth = {};
+    KeycloakService = KeycloakService_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
+    ], KeycloakService);
+    return KeycloakService;
+    var KeycloakService_1;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/model/user.model.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+var User = /** @class */ (function () {
+    function User() {
+    }
+    return User;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/displayassets.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -862,7 +1082,7 @@ var DisplayassetsService = /** @class */ (function () {
     };
     DisplayassetsService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]])
     ], DisplayassetsService);
     return DisplayassetsService;
 }());
@@ -950,7 +1170,11 @@ var WebsocketService = /** @class */ (function () {
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: false
+    production: false,
+    KEYCLOAK_URL: 'http://54.37.81.35:38080/auth/',
+    KEYCLOAK_REALM: 'tecnositaf',
+    KEYCLOAK_CLIENTID: 'cartographic-fe',
+    BACKEND_URL: 'http://localhost:8000/api'
 };
 
 
@@ -1081,6 +1305,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_app_keycloak_keycloak_service__ = __webpack_require__("../../../../../src/app/keycloak/keycloak.service.ts");
+
 
 
 
@@ -1088,8 +1314,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
-Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
-    .catch(function (err) { return console.log(err); });
+__WEBPACK_IMPORTED_MODULE_4__src_app_keycloak_keycloak_service__["a" /* KeycloakService */].init()
+    .then(function () { return Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]); })
+    .catch(function (e) {
+    console.error(e);
+});
+//  platformBrowserDynamic().bootstrapModule(AppModule)
+// .catch(err => console.log(err));
 
 
 /***/ }),

@@ -18,8 +18,8 @@ import { RightMenuComponent} from './components/right-menu/right-menu.component'
 import { HttpClientModule,HttpClient } from '@angular/common/http'; 
 import {  HttpModule, Http } from '@angular/http' ;
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
-
-
+import { KeycloakHttp , KEYCLOAK_HTTP_PROVIDER } from "../app/keycloak/keycloak.http";
+import { KeycloakService } from "../app/keycloak/keycloak.service";
 
 const appRoutes: Routes = [ 
   {path:'', component:MapComponentComponent},
@@ -55,7 +55,9 @@ const appRoutes: Routes = [
   providers: [WebsocketService,
       DisplayassetsService, 
       { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
-      SnotifyService
+      SnotifyService,
+      KEYCLOAK_HTTP_PROVIDER,
+      KeycloakService
     ],
   bootstrap: [AppComponent]
 })
